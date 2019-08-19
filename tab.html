@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		body{
+			margin: 50px;
+		}
+
+		ul{
+			list-style-type: none;
+		}
+
+		#ul{
+			height: 30px;
+			margin-bottom: 10px;
+		}
+
+		#ul li{
+
+			height: 30px;
+			line-height: 30px;
+			padding: 0 15px;
+			border: 1px solid #abcdef;
+			float: left;
+			margin-right: 3px;
+
+		}
+
+		#content div{
+			width: 300px;
+			height: 200px;
+			border: 1px solid #abcdef;
+			display: none;
+		}
+
+		#content div.showw{
+			display: block;
+		}
+		.current{
+			color: red;
+		}
+
+	</style>
+</head>
+<body>
+
+	<ul id="ul">
+		<li class="current">php</li>
+		<li>ruby</li>
+		<li>python</li>
+	</ul>
+
+	<div id="content">
+		<div class="showw">php.......介绍</div>
+		<div>ruby.......介绍</div>
+		<div>python.......介绍</div>
+	</div>
+
+	<script type="text/javascript">
+		$('#ul li').click(function(){
+			$(this).addClass('current').siblings().removeClass('current')
+			.parent().next().children().eq($(this).index()).show().siblings().hide();
+			//$('#content>div').eq($(this).index()).show().siblings().hide();
+		});
+
+	</script>
+	
+</body>
+
+
+
+
+</html>

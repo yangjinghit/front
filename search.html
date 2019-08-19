@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+		table{
+			width: 700px;
+			border: 1px solid #abcdef;
+			border-collapse: collapse;
+		}
+
+		tr{
+			height: 30px;
+
+		}
+
+		th,td{
+			border: 1px solid #abcdef;
+			text-align: center;
+
+		}
+		
+
+	</style>
+</head>
+<body>
+	<table>
+		<tr id="header">
+			<th>姓名</th>
+			<th>性别</th>
+			<th>电话</th>
+		</tr>
+
+		<tr>
+			<td>张三</td>
+			<td>男</td>
+			<td>13812345678</td>
+
+		</tr>
+		<tr>
+			<td>李四</td>
+			<td>女</td>
+			<td>13812345678</td>
+
+		</tr>
+		<tr>
+			<td>王五</td>
+			<td>男</td>
+			<td>13812345678</td>
+
+		</tr>
+
+
+	</table>
+	<input type="text" />
+	<input type="button" value="搜索" />
+
+	
+
+	<script type="text/javascript">
+		$('input[type=button]').click(function(){
+
+			var text = $('input[type=text]').val();
+			$('table tr:not("#header")').hide().filter(':contains("'+ text + '")').show();
+		});
+
+	</script>
+	
+</body>
+
+
+
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		*{
+			padding: 0;
+			margin: 0;
+		}
+
+
+	</style>
+</head>
+<body>
+	<textarea name="" id="" cols="30" rows="10"></textarea>
+	<span>你还可以输入<strong style="color:red">140</strong>个字</span>
+	
+
+	<script type="text/javascript">
+		var maxLength = 140;
+
+		$('textarea').keyup(function(){
+			var l = $(this).val().length;
+			$('strong').text(maxLength - l);
+			if (parseInt($('strong').text()) < 0) {
+				$('strong').text('0');
+				var val = $(this).val().substring(0,140);
+				$(this).val(val);
+			};
+
+		});
+
+	</script>
+	
+</body>
+
+
+
+
+</html>
