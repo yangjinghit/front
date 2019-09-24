@@ -1,0 +1,36 @@
+*{
+	padding: 0;
+	margin: 0;
+}
+
+.red {
+	color:#FF0000;
+}
+
+.blue {
+	color: #0000FF;
+}
+
+.card {
+	width: 200px;
+	background: #ccc;
+	padding: 10px;
+	margin: 5px;
+}
+
+.panel {
+	max-width: 300px;
+	border: 1px solid #999;
+	padding: 15px;
+
+}
+
+.panel .title {
+	border-bottom: 1px solid #999;
+}
+
+.panel .footer {
+	border-bottom: 1px solid #999;
+}
+
+

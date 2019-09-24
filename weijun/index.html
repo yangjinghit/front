@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	<title>Document</title>
+		<link rel="stylesheet" type="text/css" href="wj.css">
+</head>
+<body>
+
+	<div id="first">
+		{{a}}
+
+		<input type="text" v-model="name">
+		<span v-show="name">你的名字是：{{name}}</span>
+		<ul>
+			<li v-for = "food,index in foodList">{{food.name}}{{index}}</li>
+		</ul>
+		<a v-bind:href="url" v-bind:class="{red: isActive}">点我</a>
+		<button v-on="{mouseenter: onEnter, mouseleave: onLeave}" v-on:click="onClick">点我</button>
+		<form v-on:keyup.enter="onEnter" v-on:submit.prevent="onSubmit">
+			<input type="text">
+			<button type="submit">提交</button>
+		</form>
+		<br>
+
+		<label>
+			男
+			<input v-model="sex" value="male" type="radio">
+		</label>
+		<label>
+			女
+			<input v-model="sex" value="female" type="radio">
+		</label>
+		{{sex}}
+
+		<br>
+
+		<label>
+			男
+			<input v-model="sex2" value="male" type="checkbox">
+		</label>
+		<label>
+			女
+			<input v-model="sex2" value="female" type="checkbox">
+		</label>
+		{{sex2}}
+		<br>
+		<select v-model="from">
+			<option value="1">aaa</option>
+			<option value="2">bbb</option>
+		</select>
+		<div v-if="role == 'admin'">
+		管理员你好
+		</div>
+		<div v-else-if="role == 'hr'">
+			查看简历
+		</div>
+		<div v-else>
+				您没有权限访问此页面
+		</div>
+		<ul>
+			<li v-for="value,key in todoObj">{{key}}:{{value}}</li>
+		</ul>
+		<alert msg="Yoooo"></alert>
+		<like></like>
+
+		<balance></balance>
+
+		<huahua></huahua>
+		<shuandan></shuandan>
+
+		<div>
+			{{price | currency('USD')}}
+		</div>
+
+		<div v-pin:true.bottom.right="card1.pinned" class="card">
+			<button @click="card1.pinned = !card1.pinned">盯住/取消</button>
+			aljfdalsjflajfalfjalfj
+		</div>
+		<div v-pin="card2.pinned" class="card">
+			alfalfjalsfdjaldfjalsfj
+		</div>
+
+		<div>
+			<tooltip></tooltip>
+			<popup></popup>
+		</div>
+
+		<div>
+			<panel>
+				<div slot="content">
+					cccccccc
+				</div>
+				<div slot="title">
+					ttttttt
+				</div>
+				<div slot="footer">
+					fffffffff
+				</div>
+			</panel>
+
+		</div>
+	</div>
+
+	<template id="panel-tpl">
+		<div class="panel">
+				<div class="title">
+					<slot name="title"></slot>
+				</div>
+				<div class="content">
+					<slot name="content"></slot>
+				</div>
+				<div class="footer">
+					<slot name="footer"></slot>
+				</div>
+
+			</div>
+
+	</template>
+
+	<div class="once" v-once>
+		{{message}}
+		<p v-if="show">hahahahhahhaah</p>
+		<div v-bind:class="color">test</div>
+	</div>
+
+
+	<div id="second">
+		<ol>
+			<todo-item v-for="item in forList"
+				v-bind:hahaha="item"
+				v-bind:key="item.id">
+			</todo-item>
+		</ol>
+
+	</div>
+
+	<div>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+		adfaf<br>
+
+
+	</div>
+
+		<script type="text/javascript" src="vue.js"></script>
+		<script type="text/javascript" src="wj.js"></script>
+</body>
+
+
+
+
+</html>
